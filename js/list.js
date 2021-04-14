@@ -1,19 +1,22 @@
 export const list = {
     rows:[
         {
-            margin: 40,
+            margin: 20,
             padding: {
-                left: 10
+                left: 10,
+                right: 20
             },
             cols: [
                 {
                     view: "label",
                     label: "Sort list:",
-                    width: 60,
+                    inputWidth: 100,
+                    align: "right"
                 },
                 {                    
                     view: "mybutton",
-                    width: 100
+                    inputWidth: 100,
+                    align: "left"
                 } 
             ]
         },

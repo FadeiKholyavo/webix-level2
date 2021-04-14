@@ -11,6 +11,7 @@ export const button = webix.protoUI({
     defaults:{
         on:{
             "onStateChange": function(state){  
+                
                 const filmList = $$("filmsList");
                 switch(state){
                     case 1:
@@ -32,7 +33,7 @@ export const button = webix.protoUI({
     $init: function(config){
 
         config.value = this.states[this.state];
-        changeCss.call(this, "webix_secondary", "green-button");
+        changeCss.call(this, "webix_secondary", "green-button custom-button");
 
         this.attachEvent("onItemClick", function(){
 
@@ -42,6 +43,7 @@ export const button = webix.protoUI({
             this.refresh();
             this.callEvent("onStateChange", [this.state]);
         })
-    }
+    },
+
 
 }, webix.ui.button);
