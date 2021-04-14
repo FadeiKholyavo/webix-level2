@@ -12,15 +12,14 @@ export const list = {
                     width: 60,
                 },
                 {                    
-                    view: "button",
-                    value: "off",
+                    view: "mybutton",
                     width: 100
-                }  
+                } 
             ]
-
         },
         {
             view: "list",
+            id: "filmsList",
             url: ("../data/testdata.js"),
             template: "<span class=\"bold\">#id#. #title#</span><br>Year: #year#, rank:#rank#",
             type:{

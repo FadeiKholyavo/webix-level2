@@ -1,3 +1,26 @@
 .bold{
     font-weight: 500;
 }
+
+.green-button .webix_button{
+    background-color: #CFFFCF;
+}
+
+.red-button .webix_button{ 
+    background-color: #FFCDCD;
+
+}
+
+.yellow-button .webix_button{
+    background-color: #FFFFE0;
+    cursor: pointer;
+}
+
+.webix_button{
+    border: 1px solid #475466 !important;
+    border-radius: 5px ;
+    color: #475466 !important;
+    font-weight: 400 ;
+    user-select: none;     
+}
+
