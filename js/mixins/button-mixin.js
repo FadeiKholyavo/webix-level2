@@ -1,5 +1,3 @@
-import {changeCss} from "../extra-functions.js";
-
 export const button = webix.protoUI({
     name:"sortButton",
     states: {
@@ -44,6 +42,10 @@ export const button = webix.protoUI({
             this.callEvent("onStateChange", [this.state]);
         })
     },
+    _changeCss(oldCssClass, newCssClass){
+        webix.html.removeCss(this.$view, oldCssClass);
+        webix.html.addCss(this.$view, newCssClass);
+    }
 
 
 }, webix.ui.button);
