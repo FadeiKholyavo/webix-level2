@@ -2,27 +2,17 @@
     font-weight: 500;
 }
 
-.green-button .webix_button{
-    background-color: #CFFFCF;
-}
-
-.red-button .webix_button{ 
-    background-color: #FFCDCD;
-}
-
-.yellow-button .webix_button{
-    background-color: #FFFFE0;
-
-}
-
+.green-button .webix_button,
 .green-button .webix_button:hover{
     background-color: #CFFFCF;
 }
 
+.red-button .webix_button,
 .red-button .webix_button:hover{ 
     background-color: #FFCDCD;
 }
 
+.yellow-button .webix_button,
 .yellow-button .webix_button:hover{
     background-color: #FFFFE0;
 

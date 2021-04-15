@@ -1,7 +1,9 @@
 export const button = webix.protoUI({
     name:"sortButton",
     $init: function(config){
-        if(config.state == undefined || config.states == undefined){
+        const states = config.states;
+        const state = config.state;
+        if(state == undefined || states == undefined || states == null || state == null || Object.keys(states).length == 0 || !Number.isInteger(state)){
             webix.message({
                 text:"State or states are undefined",
                 type:"error", 
