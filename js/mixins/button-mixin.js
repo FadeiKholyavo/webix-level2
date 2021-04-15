@@ -1,45 +1,29 @@
 export const button = webix.protoUI({
     name:"sortButton",
-    states: {
-        1: "Off",
-        2: "Sort Asc",
-        3: "Sort Desc"
-    },
-    state: 1,
-    defaults:{
-        on:{
-            "onStateChange": function(state){  
-                
-                const filmList = $$("filmsList");
-                switch(state){
-                    case 1:
-                        filmList.sort("#id#", "asc");
-                        changeCss.call(this, "yellow-button", "green-button");
-                        break;
-                    case 2:
-                        filmList.sort("#title#", "asc");
-                        changeCss.call(this, "green-button", "red-button");
-                        break;
-                    case 3:
-                        filmList.sort("#title#", "desc");
-                        changeCss.call(this, "red-button", "yellow-button");
-                        break;
-                }
-            }
-        }
-    },
     $init: function(config){
-
-        config.value = this.states[this.state];
-        changeCss.call(this, "webix_secondary", "green-button custom-button");
+        config.value = config.states[config.state].label;
+        this._changeCss("webix_secondary", `${config.states[config.state].css} custom-button`);
 
         this.attachEvent("onItemClick", function(){
 
-            this.state = this.state == 3 ? 1 : ++this.state;
-            this.config.value = this.states[this.state];
+            const statesLength = Object.keys(this.config.states).length;
+            const css = Object.values(this.config.states).map(item => {
+                return item.css
+            });
 
+            if(this.config.state == statesLength){
+                this._changeCss(css[this.config.state - 1], css[0]);
+            }else{
+                this._changeCss(css[this.config.state - 1] ,css[this.config.state]);
+            }
+            
+            this.config.state = this.config.state == statesLength ? 1 : ++this.config.state;
+            this.config.value = this.config.states[this.config.state].label;
+            
             this.refresh();
-            this.callEvent("onStateChange", [this.state]);
+            this.callEvent("onStateChange", [this.config.state]);
+
+
         })
     },
     _changeCss(oldCssClass, newCssClass){
