@@ -8,7 +8,7 @@ export const button = webix.protoUI({
 
             const statesLength = Object.keys(this.config.states).length;
             const css = Object.values(this.config.states).map(item => {
-                return item.css
+                return item.css;
             });
 
             if(this.config.state == statesLength){
