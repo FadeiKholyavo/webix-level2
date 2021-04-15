@@ -3,7 +3,7 @@ export const form = webix.protoUI({
     $init: function (config) {
         if(config.fields == undefined){
             webix.message({
-                text:"Form fields are not defined",
+                text:"Form fields are undefined",
                 type:"error", 
                 expire: 1000,
             });
