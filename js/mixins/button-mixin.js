@@ -2,7 +2,7 @@ export const button = webix.protoUI({
     name:"sortButton",
     $init: function(config){
         config.value = config.states[config.state].label;
-        webix.html.addCss(this.$view ,`${config.states[config.state].css} custom-button`);
+        webix.html.addCss(this.getNode() ,`${config.states[config.state].css} custom-button`);
 
         this.attachEvent("onItemClick", function(){
 
@@ -27,8 +27,8 @@ export const button = webix.protoUI({
         })
     },
     _changeCss(oldCssClass, newCssClass){
-        webix.html.removeCss(this.$view, oldCssClass);
-        webix.html.addCss(this.$view, newCssClass);
+        webix.html.removeCss(this.getNode(), oldCssClass);
+        webix.html.addCss(this.getNode(), newCssClass);
     }
 
 
