@@ -30,6 +30,5 @@ export const button = webix.protoUI({
         webix.html.removeCss(this.$view, oldCssClass);
         webix.html.addCss(this.$view, newCssClass);
     }
-
-
+    
 }, webix.ui.button);
