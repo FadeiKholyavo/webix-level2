@@ -1,7 +1,7 @@
 import {changeCss} from "../extra-functions.js";
 
 export const button = webix.protoUI({
-    name:"mybutton",
+    name:"sortButton",
     states: {
         1: "Off",
         2: "Sort Asc",

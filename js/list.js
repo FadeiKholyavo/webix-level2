@@ -14,7 +14,7 @@ export const list = {
                     align: "right"
                 },
                 {                    
-                    view: "mybutton",
+                    view: "sortButton",
                     inputWidth: 100,
                     align: "left"
                 } 
