@@ -39,12 +39,6 @@ export const form = webix.protoUI({
                         type:"info", 
                         expire: 1000,
                     })},
-    },
-    saveAction_setter: function(value) {
-        return value;
-    },
-    clearAction_setter: function(value) {
-        return value;
     }
 
 }, webix.ui.form);
